@@ -12,7 +12,7 @@ MMVideoSDK提供两种方式供iOS开发者选择。
 ```ruby
 source 'https://github.com/cosmos33/MMSpecs.git'
 
-pod 'MMVideoSDK', '1.0.2'
+pod 'MMVideoSDK', '1.0.3'
 ```
 
 保存并执行`pod install`。

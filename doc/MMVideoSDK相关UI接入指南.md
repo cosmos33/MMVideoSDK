@@ -22,7 +22,7 @@
     pod 'YYImage'
     pod 'ReactiveCocoa', '2.5'
     pod 'ZipArchive'
-    pod 'VideoSDK', '1.0.2'
+    pod 'VideoSDK', '1.0.3'
 ```
 
 * 在`Project_name-Bridging-Header.h`文件中，写入

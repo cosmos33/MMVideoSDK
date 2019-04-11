@@ -289,7 +289,11 @@
 @property (nonatomic,copy) void (^recordSegmentsChangedHandler)(NSArray *durations, NSArray *presentDurations, BOOL valid , MDRecordSegmentStatus segmentStatus)
 ```
 
+* 切换滤镜
+
 ```c
+    - (void)configCurrentFilter:(MDRecordFilter *)filter
+
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 
@@ -585,6 +589,8 @@
 * 切换滤镜
 
 ```c
+    - (void)configCurrentFilter:(MDRecordFilter *)filter
+
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 
@@ -768,6 +774,8 @@
 * 切换滤镜
 
 ```c
+    - (void)configCurrentFilter:(MDRecordFilter *)filter
+
     - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
 ```
 

@@ -6,6 +6,8 @@
 
 ### 初始化SDK
 
+#### MDRecordManager
+
 * 设置APPID
 
 ```c
@@ -36,6 +38,8 @@
     + (NSString *)appToken;
 ```
 
+#### MDRecordDetectorManger
+
 * 设置人脸识别预加载器
 
 ```c
@@ -45,6 +49,8 @@
 ## 录制模块
 
 ### 基本设置
+
+#### MDRecordingAdapter
 
 * 获取显示视图
 
@@ -114,7 +120,7 @@
     // 是否支持闪光灯
     - (BOOL)hasFlash;
 
-    // 闪光灯模式
+    // 闪光灯模式, 返回 MDRecordCaptureFlashMode 类型的数组(NSNumber *)
     - (NSArray *)supportFlashModes;
 
     // 设置闪光灯模式
@@ -408,6 +414,7 @@
 * 启用3D引擎
 
 ```c
+    // 传入变脸贴纸相关所在的根路径
     - (void)runXESEngineWithDecorationRootPath:(NSString *)path;
 ```
 
@@ -427,6 +434,8 @@
 ## 视频编辑模块
 
 ### 视频编辑模块基本设置
+
+#### MDVideoEditorAdapter
 
 * 加载视频
 
@@ -752,6 +761,8 @@
 ## 图片编辑模块
 
 ### 图片编辑模块基本设置
+
+#### MDImageEditorAdapter
 
 * 加载图片
 

@@ -76,3 +76,7 @@ pod 'MMVideoSDK', '1.0.3'
     }
     [MDRecordDetectorManger config];
 ```
+
+**注意:**
+
+建议iPhone 7以上手机启用美妆功能以及背景模糊功能

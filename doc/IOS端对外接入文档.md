@@ -262,6 +262,24 @@
    [self.adapter hasPerSpeedEffect];
 ```
 
+* 添加美妆效果
+
+```c
+    - (void)addMakeupEffectWithItem:(MDMomentMakeupItem *)item {
+        [self.adapter removeAllMakeUpEffect];
+        [self.adapter enableMakeup:YES];
+        for (NSURL *url in item.items) {
+            NSString *identifier = [self.adapter addMakeUpEffectWithResourceURL:url];
+            [self.adapter setIntensity:0.5 forIdentifiler:identifier];
+        }
+    }
+
+    - (void)removeAllMakeupEffect {
+        [self.adapter enableMakeup:NO];
+        [self.adapter removeAllMakeUpEffect];
+    }
+```
+
 关于录制其它操作请参考接口文档。
 
 ## 视频编辑

@@ -10,6 +10,7 @@
 #import "MDProcessImageProtocol.h"
 #import "MDRecordFilter.h"
 #import "MDBBGPUImageSlidingFilter.h"
+@import CXBeautyKit;
 
 @class FDKDecoration, FDKDecorationFilterOptions, CXBeautyConfiguration, FDKBeautySettings;
 @protocol FDKDecorationFilterUpdating;
@@ -29,6 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 @property (nonatomic, strong) CXBeautyConfiguration *beautyConfiguration;
 
+- (void)enableMakeup:(BOOL)enable;
+- (void)addMakeupLayerConfiguration:(CXMakeupLayerConfiguration *)layerConfiguration;
+- (void)removeMakeupLayerConfigurationWithLayerIdentifier:(NSString *)layerIdentifier;
+
+- (void)enableBackgroundBlur:(BOOL)enable;
+- (void)backgroundBlurIntensity:(float)intensity;
+- (void)backgroundBlurMode:(CXBackgroundBlurMode)mode;
+
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterA;
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterB;
 @property (nonatomic, assign) float slidingOffset;
@@ -37,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cleanCache;
 - (void)purgeGPUCache;
+
+// add custom filter
+- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
 
 @end
 

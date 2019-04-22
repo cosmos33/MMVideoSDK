@@ -12,6 +12,7 @@
 #import "MDCameraDetectorPipline.h"
 #import "MDRecordCameraAdapter.h"
 #import "MDBBGPUImageSlidingFilter.h"
+@import CXBeautyKit;
 
 @class CXBeautyConfiguration;
 @protocol MLPixelBufferDisplay;
@@ -134,6 +135,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)clean;
 - (void)resetState;
 
+// add custom filter
+- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+
 @end
 
 @interface MDRecordingAdapter (Music)
@@ -169,6 +174,66 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)nextRecordSegmentSpeedVaryFactor;
 - (void)speedVaryShouldAllow:(BOOL)isAllow;
 - (BOOL)hasPerSpeedEffect;
+
+@end
+
+@interface MDRecordingAdapter (MDRMakeUp)
+
+/**
+ 启用美妆功能
+
+ @param enable YES启用，NO禁用
+ */
+- (void)enableMakeup:(BOOL)enable;
+
+/**
+ 增加美妆效果
+
+ @param resouceURL 资源文件路径
+ @return 该效果identifier
+ */
+- (NSString *)addMakeUpEffectWithResourceURL:(NSURL *)resouceURL;
+
+/**
+ 根据identifier移除美妆效果
+
+ @param identifiter 要移除的美妆效果的identifier
+ */
+- (void)removeMakeUpEffectWithIdentifier:(NSString *)identifiter;
+
+/**
+ 移除所有的美妆效果
+ */
+- (void)removeAllMakeUpEffect;
+
+/**
+ 调整美妆效果程度
+
+ @param intensity 程度(0-1)
+ @param identifier 美妆效果
+ */
+- (void)setIntensity:(CGFloat)intensity forIdentifiler:(NSString *)identifier;
+
+@end
+
+@interface MDRecordingAdapter (MDRBackgroundBlur)
+
+/**
+ 是否启用背景模糊
+
+ @param enable YES启用，NO禁用
+ */
+- (void)enableBackgroundBlur:(BOOL)enable;
+
+/**
+ 设置背景模糊效果
+
+ @param mode 背景模糊样式
+ */
+- (void)setBackgroundBlurMode:(CXBackgroundBlurMode)mode;
+
+// 背景模糊程度(0-1)
+- (void)setBackgroundBlurIntensity:(CGFloat)intensity;
 
 @end
 

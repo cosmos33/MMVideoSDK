@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDFaceRigV2DetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDFaceRigV2DetectorContext *_Nullable))completed;
 
 @property (nonatomic, readonly) MMFaceRigFeature *result;
 

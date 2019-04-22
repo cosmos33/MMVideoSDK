@@ -43,6 +43,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rotateCamera:(AVCaptureDevicePosition)position;
 - (void)enableRecording:(BOOL)enable;
 
+// makeup
+- (void)enableMakeup:(BOOL)enable;
+- (void)addMakeupLayerConfiguration:(CXMakeupLayerConfiguration *)layerConfiguration;
+- (void)removeMakeupLayerConfigurationWithLayerIdentifier:(NSString *)layerIdentifier;
+
+// background blur
+- (void)enableBackgroundBlur:(BOOL)enable;
+- (void)backgroundBlurIntensity:(float)intensity;
+- (void)backgroundBlurMode:(CXBackgroundBlurMode)mode;
+
+// add custom filter
+- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -42,6 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setBeautyLenghLegValue:(float)value;
 - (void)removeDecoration;
 
+// 添加自定义滤镜
+- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+
 @end
 
 NS_ASSUME_NONNULL_END

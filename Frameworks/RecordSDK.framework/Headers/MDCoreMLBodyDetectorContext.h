@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0))
 @interface MDCoreMLBodyDetectorContext : NSObject <MDImageDetectorProtocol>
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDCoreMLBodyDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDCoreMLBodyDetectorContext *_Nullable))completed;
 
 @property (nonatomic, readonly) NSArray<MMBodyFeature *> *result;
 

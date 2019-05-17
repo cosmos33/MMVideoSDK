@@ -12,7 +12,7 @@
 #import "MDBBGPUImageSlidingFilter.h"
 @import CXBeautyKit;
 
-@class FDKDecoration, FDKDecorationFilterOptions, CXBeautyConfiguration, FDKBeautySettings;
+@class FDKDecoration, FDKDecorationFilterOptions, CXBeautyConfiguration, FDKBeautySettings, MDGPUImageMediaFiltersAttachment;
 @protocol FDKDecorationFilterUpdating;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float slidingOffset;
 
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
+- (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;
 
 - (void)cleanCache;
 - (void)purgeGPUCache;

@@ -13,6 +13,8 @@
 @import FaceDecorationKit;
 @import FaceDecorationKitGPUImage;
 
+@class MDGPUImageMediaFiltersAttachment;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MDGPUImageMediaEditorPreviewFilter : GPUImageFilterGroup <FDKDecorationFilterUpdating>
@@ -26,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float audioVolume;
 
 - (void)udpateBeautySetting:(FDKBeautySettings *)beautySettings;
+- (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;
 
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterA;
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterB;

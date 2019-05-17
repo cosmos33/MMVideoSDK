@@ -10,6 +10,7 @@
 #import "MDMediaEditorContext.h"
 #import "MDRecordCameraAdapter.h"
 #import "MDImageDetectorProtocol.h"
+#import "MDGlobalDefine.h"
 
 @class MMFaceFeature;
 @protocol MLPixelBufferDisplay;
@@ -77,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
 @property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image);
 
-@property (nonatomic, copy) void (^faceFeatureHandler)(CVPixelBufferRef pixelBuffer);
+@property (nonatomic, copy) MDVideoDetectorBlock faceFeatureHandler;
 
 @end
 

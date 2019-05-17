@@ -12,9 +12,11 @@
 #import "MDCameraDetectorPipline.h"
 #import "MDRecordCameraAdapter.h"
 #import "MDBBGPUImageSlidingFilter.h"
+#import "MDGlobalDefine.h"
+
 @import CXBeautyKit;
 
-@class CXBeautyConfiguration;
+@class CXBeautyConfiguration, MDGPUImageMediaFiltersAttachment;
 @protocol MLPixelBufferDisplay;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -115,6 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)configSlidingFilterMode:(MDRGPUImageSlidingFilterMode)mode; // need be called before setupRecorder;
 - (void)configCurrentFilter:(MDRecordFilter *)filter;
 - (void)configFilterA:(MDRecordFilter *)filterA configFilterB:(MDRecordFilter *)filterB offset:(float)offset;
+- (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;     //滤镜链插槽，canUseAIBeautySetting 为 false 有效。每次配置decoration后调用一次，不可重复调用
 
 - (void)updateDecoration:(FDKDecoration *)decoration;
 - (void)removeDecoration;
@@ -126,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void(^ _Nullable detectFace)(BOOL tracking);
 
-@property (nonatomic, copy) void (^faceFeatureHandler)(CVPixelBufferRef pixelBuffer);
+@property (nonatomic, copy)  MDVideoDetectorBlock faceFeatureHandler;   //视频帧，脸部，身体数据回调
 
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 @property (nonatomic, assign) BOOL canUseBodyThinSetting;

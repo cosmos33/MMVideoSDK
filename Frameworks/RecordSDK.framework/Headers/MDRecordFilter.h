@@ -10,6 +10,7 @@
 @class MLFilterDescriptor;
 @class GPUImageOutput;
 @protocol GPUImageInput;
+@protocol MLFilterUpdating;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,11 +31,17 @@ NS_ASSUME_NONNULL_BEGIN
 // Make GPUImageFilter with lazy loading
 - (GPUImageOutput<GPUImageInput> *)makeGPUImageFilter;
 
+- (GPUImageOutput<MLFilterUpdating> *)makeGPUImageFilterA;
+- (GPUImageOutput<MLFilterUpdating> *)makeGPUImageFilterB;
+
 // Processes the specified image using the receiver synchronously
 - (UIImage *)imageByProcessImage:(UIImage *)image;
 
 // Processes the specified image using the receiver asynchronously, the completionHandler called on the main thread
 - (void)processImage:(UIImage *)image completionHandler:(void (^)(UIImage *outputImage))completionHandler;
+
+- (void)setLutIntensity:(CGFloat)intensity;
+- (CGFloat)getLutIntensity;
 
 @end
 

@@ -22,7 +22,9 @@ typedef NS_ENUM(NSUInteger, MDRecordDetectorType) {
     MDRecordFaceDetectorTypeExpress,
     MDRecordFaceDetectorType87,               // 87 点人脸检测
     MDRecordFaceDetectorTypeFacerigV2,        // FacerigV2检测器
-    MDRecordFaceDetectorTypeHandGesture       // 新版手势检测
+    MDRecordFaceDetectorTypeHandGesture,      // 新版手势检测
+    MDRecordFaceDetectorTypeFaceDetector,       // 新版人脸检测
+    MDRecordFaceDetectorType137              // 137 点人脸检测
 };
 
 typedef NS_ENUM(NSUInteger, MDRecordFaceDetectorModel) {
@@ -39,6 +41,8 @@ typedef NS_ENUM(NSUInteger, MDRecordFaceDetectorModel) {
     MDRecordFaceDetectorFD87Model = 1 << 13, // 人脸检测器FD 87点模型
     MDRecordFaceDetectorFrecogV2Model = 1 << 14, // Facerig检测器FrecogV2模型
     MDRecordFaceDetectorHandGestureDetectModel = 1 << 15, // 手势检测模型
+    MDRecordFaceDetectorFaceDetectModel = 1 << 16, // 新版人脸检测FD模型
+    MDRecordFaceDetectorFD137Model = 1 << 17      // 人脸检测FD 137点模型
 };
 
 @interface MDRecordFaceDetectorHelper : NSObject

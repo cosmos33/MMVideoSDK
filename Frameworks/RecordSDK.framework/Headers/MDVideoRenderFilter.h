@@ -12,6 +12,7 @@
 #import "MDRecordPiplineSpecificFilterGroup.h"
 #import "MDBBGPUImageSlidingFilter.h"
 #import "MDRecordFilter.h"
+@import CXBeautyKit;
 
 @class FDKDecoration, FDKBeautySettings, CXBeautyConfiguration;
 @protocol FDKDecorationFilterUpdating;
@@ -55,8 +56,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 @property (nonatomic, strong) CXBeautyConfiguration *beautyConfiguration;
 
+// makeup
+- (void)enableMakeup:(BOOL)enable;
+- (void)addMakeupLayerConfiguration:(CXMakeupLayerConfiguration *)layerConfiguration;
+- (void)removeMakeupLayerConfigurationWithLayerIdentifier:(NSString *)layerIdentifier;
+
+// background blur
+- (void)enableBackgroundBlur:(BOOL)enable;
+- (void)backgroundBlurIntensity:(float)intensity;
+- (void)backgroundBlurMode:(CXBackgroundBlurMode)mode;
+
 // 变声
 //- (void)prepareAudioBeatWithURL:(NSURL *)url audioBeatType:(MDRecordAudioBeatType)type;
+
+// add custom filter
+- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
 
 @end
 

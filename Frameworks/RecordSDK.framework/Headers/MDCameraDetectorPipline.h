@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSArray<id<FDKObjectFeature>> *objectFeatures;
 @property (nonatomic,strong) NSArray<MMBodyFeature *> *bodyFeatures;
 @property (nonatomic,strong) NSArray<MMHandFeature *> *handFeatures;
+@property (nonatomic,strong) NSArray<MMFaceFeature *> *faceFeatures;
 
 @end
 
@@ -58,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resetBarenessDetector;
 
 - (void)resetBarenessState;
+
+//
+
+- (void)enableMakeup:(BOOL)enable;
+- (void)enableBackgroundBlur:(BOOL)enable;
 
 @end
 

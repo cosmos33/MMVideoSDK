@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDObjectDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDObjectDetectorContext *_Nullable))completed;
 
 @property (nonatomic, readonly) MMObjectDetectionResult *result;
 

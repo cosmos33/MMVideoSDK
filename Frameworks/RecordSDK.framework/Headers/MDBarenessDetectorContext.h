@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDBarenessDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDBarenessDetectorContext *_Nullable))completed;
 
 @property (nonatomic, readonly) NSNumber *result;
 

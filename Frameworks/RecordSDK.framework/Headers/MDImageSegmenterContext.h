@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDImageSegmenterContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDImageSegmenterContext * _Nullable))completed;
 
 @property (nonatomic, readonly) MMImageSegmentationResult *result;
 

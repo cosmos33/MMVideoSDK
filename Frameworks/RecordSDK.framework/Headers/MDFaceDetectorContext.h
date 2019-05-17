@@ -18,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MDFaceDetectorContext : NSObject <MDImageDetectorProtocol>
 
 - (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithDetector:(MMFaceDetector *)detector;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext * _Nullable))completed;
 
 @property (nonatomic, readonly) NSArray<MMFaceFeature *> *result;
 @property (nonatomic, readonly) NSArray<NSNumber *> *skinColorThreshold;
@@ -31,8 +32,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MDFace87DetectorContext : MDFaceDetectorContext
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext * _Nullable))completed;
+
+@end
+
+@interface MDFace137DetectorContext: MDFaceDetectorContext
+
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext * _Nullable))completed;
 
 @end
 

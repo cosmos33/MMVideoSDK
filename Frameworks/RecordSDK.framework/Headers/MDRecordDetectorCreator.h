@@ -35,8 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)asyncAutoMakeBodyDetector:(void(^)(MMBodyDetector * _Nullable detector))completed;
 
 // 87点人脸检测
-- (MMFaceDetector * _Nullable)makeface87Detector;;
+- (MMFaceDetector * _Nullable)makeface87Detector;
 - (void)asyncAutoMakeFace87Detector:(void(^)(MMFaceDetector * _Nullable detector))completed;
+
+// 137点人脸检测
+- (MMFaceDetector * _Nullable)makeFace137Detector;
+- (void)asyncAutoMakeFace137Detector:(void(^)(MMFaceDetector * _Nullable detector))completed;
 
 // Facerig
 - (void)asyncAutoMakeFacerigV2Detector:(void(^)(MMFaceRigV2Detector * _Nullable detector))completed;
@@ -48,6 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 光膀子检测
 - (MMBarenessDetector * _Nullable)makeBarenessDetector;
 - (void)asyncAutoMakeBarenessDetector:(void(^)(MMBarenessDetector * _Nullable detector))completed;
+
+// 新人脸检测
+- (MMFaceDetector * _Nullable)makeNewFaceDetector;
+- (void)newAsyncAutoMakeFaceDetector:(void(^)(MMFaceDetector * _Nullable detector))completed;
 
 @end
 

@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDBodyDetectorContext *))completed;
++ (instancetype _Nullable)makeDetector;
++ (void)asyncAutoMakeDetector:(void(^)(MDBodyDetectorContext *_Nullable))completed;
 
 @property (nonatomic, readonly) NSArray<MMBodyFeature *> *result;
 

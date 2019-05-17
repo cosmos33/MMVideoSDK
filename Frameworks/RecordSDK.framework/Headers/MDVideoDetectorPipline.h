@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)thinBodyConfiguration:(FDKBeautySettings *)beautySettings;
 
+- (void)enableBackgroundBlur:(BOOL)enable;
+
 @property (nonatomic, assign) BOOL canUseBodyThinSetting;
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 

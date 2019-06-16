@@ -114,6 +114,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) float targetBitRate;
 @property (nonatomic, assign) CGSize presentationSize;
+@property (nonatomic, assign) NSInteger targetFrameRate;
 @property (nonatomic, assign) CGAffineTransform videoPerferredTransform;
 
 - (void)enableFilterEffect:(BOOL)enable;

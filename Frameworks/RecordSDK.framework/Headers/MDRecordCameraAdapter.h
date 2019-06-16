@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 
 @protocol MDRecordCameraAdapterDelegate <NSObject>
 
-- (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer timinginfo:(CMSampleTimingInfo)timingInfo;
+- (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer timinginfo:(CMSampleTimingInfo)timingInfo metaInfo:(NSDictionary *)metaInfo;
 
 - (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputAudioSampleBuffer:(CMSampleBufferRef)audioSampleBuffer;
 

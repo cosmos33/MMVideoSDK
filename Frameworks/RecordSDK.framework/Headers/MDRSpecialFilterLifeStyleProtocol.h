@@ -10,6 +10,8 @@
 
 @protocol MDRSpecialFilterLifeStyleProtocol <NSObject>
 
+@optional
+
 - (void)willEnter;
 - (void)didEnter;
 - (void)willLeave;

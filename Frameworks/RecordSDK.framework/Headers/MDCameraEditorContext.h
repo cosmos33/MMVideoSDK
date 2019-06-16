@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MDCameraEditorContext : MDMediaEditorContext
 
-- (instancetype)initWithCameraPosition:(AVCaptureDevicePosition)position sessionPreset:(NSString *)preset;
+- (instancetype)initWithCameraPosition:(AVCaptureDevicePosition)position sessionPreset:(NSString *)preset frameRate:(NSUInteger)frameRate;
 
 @property (nonatomic, strong) id<MDProcessImageProtocol> filter;
 
@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^completeProgressUpdateHandler)(double progress);
 
 @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
-@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image);
+@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image, NSDictionary *metaInfo);
 
 @property (nonatomic, copy) MDVideoDetectorBlock faceFeatureHandler;
 

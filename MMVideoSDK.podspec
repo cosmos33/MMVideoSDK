@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMVideoSDK'
-  s.version          = '2.0.0'
+  s.version          = '2.0.3'
   s.summary          = 'MMVideoSDK'
 
   s.description      = <<-DESC
@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/**/*.framework'
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => '$(inherited) NO', 'OTHER_LDFLAGS' => '$(inherited) -ObjC'}
 
-  s.dependency 'MMMedia', '2.0.0'
-  s.dependency 'MMCV', '1.0.2'
-  s.dependency 'MMXEScene', '1.0.0'
+  s.dependency 'MMMedia', '~> 2.0.1'
+  s.dependency 'MMCV', '~> 1.0.2'
+  s.dependency 'MMXEScene', '~> 1.0.1'
   s.dependency 'GPUImage'
   s.dependency 'MetalPetal', '1.1.2'
   s.dependency 'ZipArchive'

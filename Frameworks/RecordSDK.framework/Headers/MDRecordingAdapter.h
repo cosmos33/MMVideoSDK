@@ -38,12 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setVideoCodecKey:(NSString *)codeckey;
 - (void)setVideoBitRate:(float)bitrate;
+- (void)setVideoFrameRate:(NSInteger)frameRate;
 
 - (void)setVideoResolution:(CGSize)resolution;
 - (void)setVideoScaleMode:(NSString *)scaleMode;
 
-- (void)setCameraPreset:(NSString *)preset;
+- (void)setCameraPreset:(AVCaptureSessionPreset)preset;
 - (void)setCameraPosition:(AVCaptureDevicePosition)position;
+- (void)setCameraFrameRate:(NSInteger)frameRate;
 
 - (void)setupRecorder;
     
@@ -78,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 即将开始拍照
 @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
 // 拍照结果回调
-@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image);
+@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image, NSDictionary *metaInfo);
 
 @property (nonatomic, assign)           UIDeviceOrientation     outputOrientation;
 

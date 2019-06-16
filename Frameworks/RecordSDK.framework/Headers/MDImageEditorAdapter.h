@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 初始化
 - (void)loadImage:(UIImage *)image completionHander:(void(^)(CVPixelBufferRef _Nullable, NSError * _Nullable))completion;
 
+- (void)reloadImage:(UIImage *)image;
+
 // 流程
 - (void)startProcess;
 - (void)stopProcess;

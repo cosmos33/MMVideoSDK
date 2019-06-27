@@ -11,6 +11,7 @@
 #import "MDRecordFilter.h"
 #import "MDBBGPUImageSlidingFilter.h"
 @import CXBeautyKit;
+#import "MDRGift.h"
 
 @class FDKDecoration, FDKDecorationFilterOptions, CXBeautyConfiguration, FDKBeautySettings, MDGPUImageMediaFiltersAttachment;
 @protocol FDKDecorationFilterUpdating;
@@ -44,6 +45,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
 - (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;
+
+- (void)addGift:(MDRGift *)gift;
+- (void)removeGift:(NSString *)giftID;
+- (void)clearAllGifts;
 
 - (void)cleanCache;
 - (void)purgeGPUCache;

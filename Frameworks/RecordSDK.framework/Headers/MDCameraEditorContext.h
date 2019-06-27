@@ -14,6 +14,7 @@
 
 @class MMFaceFeature;
 @protocol MLPixelBufferDisplay;
+@class MDCameraEditorContext;
 
 typedef struct {
     NSInteger faceTrackingIdentifier;
@@ -25,6 +26,18 @@ typedef struct {
 FOUNDATION_EXPORT BOOL RecorderFaceDeviation(CGRect oldFaceRect, CGRect newFaceRect);
 
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol MDCameraEditorContextDelegate <NSObject>
+
+@optional
+
+- (void)recordContext:(MDCameraEditorContext *)context
+    didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer
+    timinginfo:(CMSampleTimingInfo)timingInfo;
+- (void)recordContext:(MDCameraEditorContext *)context
+    didOutputAudioSampleBuffer:(CMSampleBufferRef)audioSampleBuffer;
+
+@end
 
 @interface MDCameraEditorContext : MDMediaEditorContext
 
@@ -46,6 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSTimeInterval recordDuration;
 
 @property (nonatomic, assign) UIDeviceOrientation outputOrientation;
+
+@property (nonatomic, weak) id<MDCameraEditorContextDelegate> delegate;
 
 
 // example:
@@ -120,6 +135,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)canStartRecording;
 - (void)clearStashVideo;
 
+- (void)enableAudioRecording;
+- (void)disableAudioRecording;
+
 @property (nonatomic, readonly) NSTimeInterval currentRecordingDuration;
 @property (nonatomic, readonly) NSTimeInterval currentRecordingPresentDuration;
 @property (nonatomic, readonly) AVCaptureDevicePosition cameraPosition;
@@ -140,6 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)rotateCamera;
 - (void)focusCameraInPoint:(CGPoint)pointInCamera;
+- (void)expposureInPoint:(CGPoint)pointInCamera;
 - (void)updateAutoFocusCameraFaceTracking:(MMFaceFeature * _Nullable)faceFeature;
 
 - (void)setVideoZoomFactor:(CGFloat)factor;

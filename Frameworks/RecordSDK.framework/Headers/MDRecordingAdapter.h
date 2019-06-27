@@ -12,6 +12,7 @@
 #import "MDCameraDetectorPipline.h"
 #import "MDRecordCameraAdapter.h"
 #import "MDBBGPUImageSlidingFilter.h"
+#import "MDRGift.h"
 #import "MDGlobalDefine.h"
 
 @import CXBeautyKit;
@@ -69,9 +70,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)switchCameraPosition;
 - (void)focusCameraInPoint:(CGPoint)pointInCamera;
+- (void)expposureInPoint:(CGPoint)pointInCamera;
 - (void)startCapturing;
 - (void)pauseCapturing;
 - (void)stopCapturing;
+
+- (void)enableAudioRecording;
+- (void)disableAudioRecording;
+
 
 - (void)switchToCameraSourceType:(MDRecordCameraSourceType)cameraSourceType;
 - (MDRecordCameraSourceType)cameraSourceType;
@@ -83,6 +89,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image, NSDictionary *metaInfo);
 
 @property (nonatomic, assign)           UIDeviceOrientation     outputOrientation;
+
+@property (nonatomic, copy, nullable) void(^cameraDidOutputAudioSampleBuffer)(CMSampleBufferRef sampleBuffer);
 
 @end
 
@@ -124,6 +132,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateDecoration:(FDKDecoration *)decoration;
 - (void)removeDecoration;
 - (void)adjustStikcerVolume:(float)volume;
+
+- (void)addGift:(MDRGift *)gift;
+- (void)removeGift:(MDRGift *)gift;
+- (void)removeGiftWithGiftID:(NSString *)giftID;
+- (void)clearAllGifts;
 
 - (void)activateBarenessDetectorEnable:(BOOL)enable;
 - (BOOL)hasDetectorBareness;

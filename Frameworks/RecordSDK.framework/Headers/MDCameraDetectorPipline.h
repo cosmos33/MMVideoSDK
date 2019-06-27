@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MDImageDetectorProtocol.h"
 
-@class MMBodyFeature, MMHandFeature, FDKDecoration, FDKBeautySettings, FDKDecorationFilterUpdateRequest;
+@class MMBodyFeature, MMHandFeature, FDKDecoration, FDKBeautySettings, FDKDecorationFilterUpdateRequest, MDRDecorationsManager;
 @protocol FDKObjectFeature;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) MDCameraDetectorPiplineResult *result;
 
 // 根据decoration配置detectors
-- (void)configUsingDecoration:(FDKDecoration *)decoration;
+- (void)configUsingDecoration:(MDRDecorationsManager *)decoration;
 
 - (void)thinBodyConfiguration:(FDKBeautySettings *)beautySettings;
 

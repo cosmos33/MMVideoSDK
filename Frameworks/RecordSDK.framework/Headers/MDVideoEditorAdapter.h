@@ -32,13 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setTimeRangeMappingEffects:(NSArray<id<MLTimeRangeMappingEffect>> *)timeRangeMappingEffects;
 - (void)setMediaSourceRepeatRange:(CMTimeRange)timeRange;
 
-@property (nonatomic, strong) NSURL *backgroundAudioURL;
+// 默认为NO，当置为YES时候，调用 `loadVideo` 方法会自动调用 `compositeVideoWithError:`方法合成视频
+@property (nonatomic, assign) BOOL autoComposite;
+
+@property (nonatomic, strong, nullable) NSURL *backgroundAudioURL;
 @property (nonatomic, assign) CMTimeRange backgroundAudioRange;
 
 - (void)setSourceVolume:(float)volume;
 - (void)setBackgroundMusicVolume:(float)volume;
 
-- (BOOL)compositeVideoWithError:(NSError **)error;
+- (BOOL)compositeVideoWithError:(NSError * _Nullable * _Nullable)error;
 - (void)updateAudioMix;
 
 // 播放器控制

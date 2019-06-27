@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void(^ _Nullable playToEndTime)(AVPlayer *player);
 @property (nonatomic, copy) void(^ _Nullable playerPeriodicTimeCallback)(CMTime time);
 
+@property (nonatomic, readonly, nullable) NSError *error;
+
 - (void)play;
 - (void)pause;
 - (void)stop;

@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) UIView<MLPixelBufferDisplay> *previewView;
 
-@property (nonatomic, strong) AVAsset *backgroundAudio;
+@property (nonatomic, strong, nullable) AVAsset *backgroundAudio;
 @property (nonatomic, strong, readonly) id periodicTimeObserver;
 
 @property (nonatomic, assign) MDRecordCaptureFlashMode flashMode;

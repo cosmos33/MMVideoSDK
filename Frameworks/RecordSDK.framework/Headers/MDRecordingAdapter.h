@@ -75,9 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pauseCapturing;
 - (void)stopCapturing;
 
-- (void)enableAudioRecording;
 - (void)disableAudioRecording;
-
 
 - (void)switchToCameraSourceType:(MDRecordCameraSourceType)cameraSourceType;
 - (MDRecordCameraSourceType)cameraSourceType;
@@ -162,7 +160,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MDRecordingAdapter (Music)
 
 // 音乐资源
-@property (nonatomic, strong) AVAsset *backgroundAudio;
+@property (nonatomic, strong, nullable) AVAsset *backgroundAudio;
 
 @end
 

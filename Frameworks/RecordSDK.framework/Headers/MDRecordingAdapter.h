@@ -75,7 +75,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pauseCapturing;
 - (void)stopCapturing;
 
-- (void)disableAudioRecording;
+- (void)enableAudioRecording:(BOOL)enable;
+
+@property (nonatomic, assign) BOOL shouldRecordAudio;
 
 - (void)switchToCameraSourceType:(MDRecordCameraSourceType)cameraSourceType;
 - (MDRecordCameraSourceType)cameraSourceType;
@@ -88,6 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)           UIDeviceOrientation     outputOrientation;
 
+@property (nonatomic, copy, nullable) void(^cameraDidOutputVideoSampleBuffer)(CMSampleBufferRef sampleBuffer);
 @property (nonatomic, copy, nullable) void(^cameraDidOutputAudioSampleBuffer)(CMSampleBufferRef sampleBuffer);
 
 @end

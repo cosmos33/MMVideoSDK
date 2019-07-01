@@ -32,8 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 - (void)recordContext:(MDCameraEditorContext *)context
-    didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer
-    timinginfo:(CMSampleTimingInfo)timingInfo;
+    didOutputVideoSampleBuffer:(CMSampleBufferRef)videoSampleBuffer;
 - (void)recordContext:(MDCameraEditorContext *)context
     didOutputAudioSampleBuffer:(CMSampleBufferRef)audioSampleBuffer;
 

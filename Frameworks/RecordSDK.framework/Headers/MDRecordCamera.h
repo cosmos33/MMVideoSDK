@@ -24,9 +24,8 @@
 
 - (void)enableVideoDataOutputWithDelegate:(id<AVCaptureVideoDataOutputSampleBufferDelegate>)delegate queue:(dispatch_queue_t)queue;
 
-- (void)enableAudioInput;
-- (void)disableRecordAudio;
 - (void)enableAudioDataOutputWithDelegate:(id<AVCaptureAudioDataOutputSampleBufferDelegate>)delegate queue:(dispatch_queue_t)queue;
+- (void)disableAudioDataOutput;
 
 - (void)startRunningCaptureSession;
 

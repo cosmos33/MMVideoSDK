@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 // preview video
 @property (nonatomic, readonly) MDRecordPlayerViewController *playerViewController;
 
+@property (nonatomic, copy) AVLayerVideoGravity videoGravity;
+
 // updating asset
 @property (nonatomic, strong, readonly) AVAsset *composition;
 

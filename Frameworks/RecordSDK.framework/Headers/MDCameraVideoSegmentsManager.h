@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, MDRecordSegmentStatus)
 
 // 最大录制时长
 @property (nonatomic, assign) NSTimeInterval maxRecordDuration;
+@property (nonatomic, assign) NSTimeInterval minRecordDuration;
 
 // all segment's URLs
 @property (nonatomic, readonly) NSArray<NSURL *> *videoSegmentURLs;

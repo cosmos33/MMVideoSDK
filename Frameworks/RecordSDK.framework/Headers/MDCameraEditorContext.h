@@ -56,6 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isRecording;
 
 @property (nonatomic, assign) NSTimeInterval recordDuration;
+@property (nonatomic, assign) NSTimeInterval minRecordDuration;
 
 @property (nonatomic, assign) UIDeviceOrientation outputOrientation;
 

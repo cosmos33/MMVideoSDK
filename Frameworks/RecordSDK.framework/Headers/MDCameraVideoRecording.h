@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSDictionary *audioCompressionSettings;
 
 @property (nonatomic, assign) NSTimeInterval recordDuration;
+@property (nonatomic, assign) NSTimeInterval minRecordDuration;
 @property (nonatomic, assign) int oritation;
 
 @property (nonatomic, readonly, getter=isRecording) BOOL recording;

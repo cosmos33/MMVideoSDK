@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)pauseVideoCapture;
 
+- (BOOL)canStartRecording;
+
 - (void)cancelCurrentSegmentCapture;
 
 - (void)deleteLastVideoSegment;

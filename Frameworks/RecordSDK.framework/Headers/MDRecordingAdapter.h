@@ -151,6 +151,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL canUseBodyThinSetting;
 @property (nonatomic, readonly) BOOL isFaceCaptured;
 
+/** 是否开启ai 美白 默认关闭*/
+@property (nonatomic, assign) BOOL useAISkinWhiten;
+
+/** 是否开启ai 磨皮 默认关闭 */
+@property (nonatomic, assign) BOOL useAISkinSmooth;
+
+/** 是否开启ai 大眼 瘦脸 默认关闭 */
+@property (nonatomic, assign) BOOL useAIBigEyeThinFace;
+
 - (void)clean;
 - (void)resetState;
 

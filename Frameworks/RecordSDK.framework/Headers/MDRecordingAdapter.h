@@ -90,6 +90,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)           UIDeviceOrientation     outputOrientation;
 
+- (void)enableReverseVideoSampleBuffer:(BOOL)enable;
+
 @property (nonatomic, copy, nullable) void(^cameraDidOutputVideoSampleBuffer)(CMSampleBufferRef sampleBuffer);
 @property (nonatomic, copy, nullable) void(^cameraDidOutputAudioSampleBuffer)(CMSampleBufferRef sampleBuffer);
 

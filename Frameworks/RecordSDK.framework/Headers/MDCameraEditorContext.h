@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
+- (BOOL)videoSampleBufferNeedHorizontalFlipWithRecordContext:(MDCameraEditorContext *)context;
+
 - (void)recordContext:(MDCameraEditorContext *)context
     didOutputVideoSampleBuffer:(CMSampleBufferRef)videoSampleBuffer;
 - (void)recordContext:(MDCameraEditorContext *)context

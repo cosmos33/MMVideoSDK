@@ -5,7 +5,7 @@
 //  Created by sunfei on 2019/6/26.
 //
 
-@import FaceDecorationKit;
+#import <FaceDecorationKit/FDKDecoration.h>
 #import "MDRDetectorRequirements.h"
 
 NS_ASSUME_NONNULL_BEGIN

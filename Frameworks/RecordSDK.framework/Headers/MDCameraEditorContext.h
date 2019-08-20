@@ -123,8 +123,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MDCameraEditorContext (MDRecord)
 
-@property (nonatomic, assign) BOOL saveOrigin;
-
 - (void)startRecording;
 - (void)stopVideoCaptureWithOutputURL:(NSURL *)URL
                     completionHandler:(void (^)(NSURL *videoFileURL, NSError *error))completionHandler;

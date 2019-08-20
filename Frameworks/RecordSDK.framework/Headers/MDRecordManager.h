@@ -7,7 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MDRIRecordLogger;
+#ifdef Debug
+#   define MDRDebugLog(fmt, ...) NSLog((@"[RecordSDK] %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define MDRDebugLog(...) do {} while (0)
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,9 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)version;
 
 + (NSString *)appToken;
-
-+ (void)configLogger:(id<MDRIRecordLogger>)logger;
-+ (id<MDRIRecordLogger>)logger;
 
 @end
 

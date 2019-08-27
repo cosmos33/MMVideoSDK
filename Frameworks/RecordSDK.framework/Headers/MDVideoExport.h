@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 // asset parameters
 @property (nonatomic, assign) CGAffineTransform videoPerferredTransform;
 @property (nonatomic, assign) float targetBitRate;
+@property (nonatomic, assign) NSUInteger frameRate;
 @property (nonatomic, assign) CGSize presentationSize;
 @property (nonatomic, assign) CMFormatDescriptionRef _Nullable audioFormatHint;
 

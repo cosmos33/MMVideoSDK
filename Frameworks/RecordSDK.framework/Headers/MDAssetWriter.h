@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)processVideoBuffer:(CMSampleBufferRef)videoBuffer;
 - (void)processAudioBuffer:(CMSampleBufferRef)audioBuffer;
 
+- (void)enableSynchronizationCallbacks;
+
 @end
 
 @interface MDPixelBufferAssetWriter : MDAssetWriter

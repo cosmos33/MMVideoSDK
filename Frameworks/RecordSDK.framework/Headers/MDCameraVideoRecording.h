@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSDictionary *audioCompressionSettings;
 
 @property (nonatomic, assign) NSTimeInterval recordDuration;
+@property (nonatomic, assign) NSTimeInterval minRecordDuration;
 @property (nonatomic, assign) int oritation;
 
 @property (nonatomic, readonly, getter=isRecording) BOOL recording;
@@ -34,9 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) void (^recordDurationReachedHandler)(void);
 @property (nonatomic,copy) void (^completeProgressUpdateHandler)(double progress);
 
+// 默认为YES， 不录制音频
+@property (nonatomic, assign) BOOL shouldPassthroughAudio;
+
 - (BOOL)startVideoCapture;
 
 - (BOOL)pauseVideoCapture;
+
+- (BOOL)canStartRecording;
 
 - (void)cancelCurrentSegmentCapture;
 

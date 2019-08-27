@@ -11,6 +11,7 @@
 #import "MDRecordFilter.h"
 #import "MDBBGPUImageSlidingFilter.h"
 @import CXBeautyKit;
+#import "MDRGift.h"
 
 @class FDKDecoration, FDKDecorationFilterOptions, CXBeautyConfiguration, FDKBeautySettings, MDGPUImageMediaFiltersAttachment;
 @protocol FDKDecorationFilterUpdating;
@@ -28,6 +29,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float audioVolume;
 
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
+
+/** 是否开启ai 美白 默认关闭*/
+@property (nonatomic, assign) BOOL useAISkinWhiten;
+
+/** 是否开启ai 磨皮 默认关闭 */
+@property (nonatomic, assign) BOOL useAISkinSmooth;
+
+/** 是否开启ai 大眼 瘦脸 默认关闭 */
+@property (nonatomic, assign) BOOL useAIBigEyeThinFace;
+
+
 @property (nonatomic, strong) CXBeautyConfiguration *beautyConfiguration;
 
 - (void)enableMakeup:(BOOL)enable;
@@ -44,6 +56,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
 - (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;
+
+- (void)addGift:(MDRGift *)gift;
+- (void)removeGift:(NSString *)giftID;
+- (void)clearAllGifts;
 
 - (void)cleanCache;
 - (void)purgeGPUCache;

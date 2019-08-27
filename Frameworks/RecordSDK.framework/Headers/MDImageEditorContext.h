@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithImage:(UIImage *)image completionHander:(void(^)(CVPixelBufferRef _Nullable, NSError * _Nullable))completion;
 
+- (void)reloadImage:(UIImage *)image;
+
 @property (nonatomic, readonly) CIContext *ciContext;
 
 @property (nonatomic, strong) id<MDProcessImageProtocol> filter;

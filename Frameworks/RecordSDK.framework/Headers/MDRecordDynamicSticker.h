@@ -6,6 +6,7 @@
 //  Copyright © 2017年 wemomo.com. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import <CoreMedia/CoreMedia.h>
 
 @class FDKDecorationFilterOptions, FDKDecorationFilter;
 @protocol FDKObjectFeature;
@@ -42,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
                        inputFrameSize:(CGSize)inputFrameSize
               decorationFilterOptions:(FDKDecorationFilterOptions *)decorationFilterOptions NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithDecorationURL:(NSURL *)url inputFrameSize:(CGSize)inputFrameSize;
+
+@property (nonatomic, assign) CMTimeRange duration;
 
 - (FDKDecorationFilter *)makeFilter;
 - (void)update;

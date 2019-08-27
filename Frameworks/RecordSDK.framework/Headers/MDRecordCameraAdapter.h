@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 
 @protocol MDRecordCameraAdapterDelegate <NSObject>
 
-- (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer timinginfo:(CMSampleTimingInfo)timingInfo;
+- (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputVideoPixelBuffer:(CVPixelBufferRef)pixelBuffer timinginfo:(CMSampleTimingInfo)timingInfo metaInfo:(NSDictionary *)metaInfo;
 
 - (void)cameraAdapter:(MDRecordCameraAdapter *)cameraAdapter didOutputAudioSampleBuffer:(CMSampleBufferRef)audioSampleBuffer;
 
@@ -65,6 +65,10 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 
 - (void)rotateCamera;
 - (void)focusCamera:(CGPoint)point;
+
+- (void)focusCameraAtExposurePointOfInterest:(CGPoint)point;
+- (void)focusCameraAtFocusPointOfInterest:(CGPoint)point;
+
 - (void)setVideoZoomFactor:(CGFloat)factor;
 - (CGFloat)videoZoomFactor;
 - (BOOL)hasVideoInput;
@@ -76,5 +80,8 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 - (void)cleanCamera;
 
 - (void)changeAdapeterCOnfigurationPosition:(AVCaptureDevicePosition)devicePosition;
+
+- (void)enabelAudioRecording;
+- (void)disableAudioRecording;
 
 @end

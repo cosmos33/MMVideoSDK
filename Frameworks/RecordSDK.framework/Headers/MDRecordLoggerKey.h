@@ -1,0 +1,182 @@
+//
+//  MDRecordLoggerKey.h
+//  MMVideoSDK
+//
+//  Created by sunfei on 2019/7/4.
+//
+
+#ifndef MDRecordLoggerKey_h
+#define MDRecordLoggerKey_h
+
+typedef NSString * MDRecordLoggerKey NS_STRING_ENUM;
+
+extern MDRecordLoggerKey const record_perf_stat_type;
+extern MDRecordLoggerKey const record_camera_log_type;
+extern MDRecordLoggerKey const record_camera_kind;
+extern MDRecordLoggerKey const record_resolution;
+extern MDRecordLoggerKey const record_app_id;
+
+extern MDRecordLoggerKey const record_camera_use_speedvary;
+extern MDRecordLoggerKey const record_camera_beauty_bigeye;
+extern MDRecordLoggerKey const record_camera_beauty_thinface;
+extern MDRecordLoggerKey const record_camera_beauty_skinsmooth;
+extern MDRecordLoggerKey const record_camera_beauty_skinwhiten;
+extern MDRecordLoggerKey const record_camera_beauty_bodythin;
+extern MDRecordLoggerKey const record_camera_beauty_legLength;
+extern MDRecordLoggerKey const record_camera_use_background_music;
+extern MDRecordLoggerKey const record_camera_video_segments;
+extern MDRecordLoggerKey const record_camera_take_photo;
+extern MDRecordLoggerKey const record_camera_use_sticker;
+extern MDRecordLoggerKey const record_camera_detect_animoji;
+extern MDRecordLoggerKey const record_camera_type;
+extern MDRecordLoggerKey const record_camera_use_flash;
+extern MDRecordLoggerKey const record_camera_use_focus;
+extern MDRecordLoggerKey const record_camera_position_state;
+extern MDRecordLoggerKey const record_camera_rotation;
+extern MDRecordLoggerKey const record_camera_detect_face;
+extern MDRecordLoggerKey const record_camera_detect_expression;
+extern MDRecordLoggerKey const record_camera_image_segment;
+extern MDRecordLoggerKey const record_camera_detect_body_joint;
+extern MDRecordLoggerKey const record_camera_detect_objects;
+extern MDRecordLoggerKey const record_camera_use_hand_gesture;
+extern MDRecordLoggerKey const record_camera_enable_3D_Xengine;
+extern MDRecordLoggerKey const record_camera_enable_multi_faces;
+extern MDRecordLoggerKey const record_camera_detect_bareness;
+extern MDRecordLoggerKey const record_camera_preview_video_width;
+extern MDRecordLoggerKey const record_camera_preview_video_height;
+extern MDRecordLoggerKey const record_camera_video_encode;
+extern MDRecordLoggerKey const record_camera_video_extension;
+extern MDRecordLoggerKey const record_camera_video_cq;
+extern MDRecordLoggerKey const record_camera_video_encode_width;
+extern MDRecordLoggerKey const record_camera_video_encode_height;
+extern MDRecordLoggerKey const record_camera_video_encode_fps;
+extern MDRecordLoggerKey const record_camera_video_gop_size;
+extern MDRecordLoggerKey const record_camera_video_bitrate;
+extern MDRecordLoggerKey const record_camera_video_rotation;
+extern MDRecordLoggerKey const record_camera_audio_encode;
+extern MDRecordLoggerKey const record_camera_audio_bitrate;
+extern MDRecordLoggerKey const record_camera_audio_samplerate;
+extern MDRecordLoggerKey const record_camera_audio_channel;
+extern MDRecordLoggerKey const record_camera_audio_bits;
+extern MDRecordLoggerKey const record_camera_audio_mediaformat_input_size;
+extern MDRecordLoggerKey const record_camera_beauty_use_doki;
+extern MDRecordLoggerKey const record_camera_source_fps;
+extern MDRecordLoggerKey const record_camera_size_width;
+extern MDRecordLoggerKey const record_camera_size_height;
+extern MDRecordLoggerKey const record_camera_video_file_fps;
+extern MDRecordLoggerKey const record_camera_video_file_bitrate;
+extern MDRecordLoggerKey const record_camera_video_file_width;
+extern MDRecordLoggerKey const record_camera_video_file_height;
+extern MDRecordLoggerKey const record_camera_video_file_duration;
+extern MDRecordLoggerKey const record_camera_video_file_size;
+extern MDRecordLoggerKey const record_camera_fps;
+extern MDRecordLoggerKey const record_camera_screen_render_time;
+extern MDRecordLoggerKey const record_camera_codec_render_time;
+extern MDRecordLoggerKey const record_camera_encoder_time;
+extern MDRecordLoggerKey const record_camera_session_preset;
+
+// 视频编辑相关
+extern MDRecordLoggerKey const record_video_is_edited;
+extern MDRecordLoggerKey const record_video_use_speedvary;
+extern MDRecordLoggerKey const record_video_speedvary_value;
+extern MDRecordLoggerKey const record_video_beauty_bigeye;
+extern MDRecordLoggerKey const record_video_beauty_thinface;
+extern MDRecordLoggerKey const record_video_beauty_skinsmooth;
+extern MDRecordLoggerKey const record_video_beauty_skinwhiten;
+extern MDRecordLoggerKey const record_video_beauty_bodythin;
+extern MDRecordLoggerKey const record_video_beauty_legLenght;
+extern MDRecordLoggerKey const record_video_use_background_music;
+extern MDRecordLoggerKey const record_video_detect_body_joint;
+extern MDRecordLoggerKey const record_video_source_pitch_shift;
+extern MDRecordLoggerKey const record_video_origin_size;
+extern MDRecordLoggerKey const record_video_origin_duration;
+extern MDRecordLoggerKey const record_video_original_natural_width;
+extern MDRecordLoggerKey const record_video_original_natural_height;
+extern MDRecordLoggerKey const record_video_origin_bitrate;
+extern MDRecordLoggerKey const record_video_origin_video_fps;
+extern MDRecordLoggerKey const record_video_origin_audio_samplerate;
+extern MDRecordLoggerKey const record_video_encode_type;
+extern MDRecordLoggerKey const record_video_bg_changer;
+extern MDRecordLoggerKey const record_video_origin_audio_channels;
+extern MDRecordLoggerKey const record_video_origin_audio_bitrate;
+extern MDRecordLoggerKey const record_video_rate_control_method;
+extern MDRecordLoggerKey const record_video_crf_constant;
+extern MDRecordLoggerKey const record_video_IFrame_only;
+extern MDRecordLoggerKey const record_video_edit_cq;
+extern MDRecordLoggerKey const record_video_edit_video_encode;
+extern MDRecordLoggerKey const record_video_edit_video_extension;
+extern MDRecordLoggerKey const record_video_edit_video_width;
+extern MDRecordLoggerKey const record_video_edit_video_height;
+extern MDRecordLoggerKey const record_video_edit_video_framerate;
+extern MDRecordLoggerKey const record_video_edit_video_bitrate;
+extern MDRecordLoggerKey const record_video_edit_video_gop_size;
+extern MDRecordLoggerKey const record_video_edit_video_rotation;
+extern MDRecordLoggerKey const record_video_edit_audio_encode;
+extern MDRecordLoggerKey const record_video_edit_audio_bitrate;
+extern MDRecordLoggerKey const record_video_edit_audio_sampleRate;
+extern MDRecordLoggerKey const record_video_edit_audio_channels;
+extern MDRecordLoggerKey const record_video_file_duration;
+extern MDRecordLoggerKey const record_video_file_size;
+extern MDRecordLoggerKey const record_video_file_bitrate;
+extern MDRecordLoggerKey const record_video_file_fps;
+extern MDRecordLoggerKey const record_video_file_width;
+extern MDRecordLoggerKey const record_video_file_height;
+extern MDRecordLoggerKey const record_video_process_time;
+extern MDRecordLoggerKey const record_video_screen_render_time;
+extern MDRecordLoggerKey const record_video_codec_render_time;
+extern MDRecordLoggerKey const record_video_detect_time;
+
+// 图片相关
+extern MDRecordLoggerKey const record_photo_beauty_bigeye;
+extern MDRecordLoggerKey const record_photo_beauty_thinface;
+extern MDRecordLoggerKey const record_photo_beauty_skinsmooth;
+extern MDRecordLoggerKey const record_photo_beauty_skinwhiten;
+extern MDRecordLoggerKey const record_photo_beauty_bodythin;
+extern MDRecordLoggerKey const record_photo_beauty_legLenght;
+extern MDRecordLoggerKey const record_photo_detect_body_joint;
+extern MDRecordLoggerKey const record_photo_detect_face;
+extern MDRecordLoggerKey const record_photo_origin_size;
+extern MDRecordLoggerKey const record_photo_origin_width;
+extern MDRecordLoggerKey const record_photo_origin_height;
+extern MDRecordLoggerKey const record_photo_origin_format;
+extern MDRecordLoggerKey const record_photo_filter_type;
+extern MDRecordLoggerKey const record_photo_file_size;
+extern MDRecordLoggerKey const record_photo_file_width;
+extern MDRecordLoggerKey const record_photo_file_height;
+extern MDRecordLoggerKey const record_photo_file_format;
+extern MDRecordLoggerKey const record_photo_detect_time;
+extern MDRecordLoggerKey const record_photo_render_time;
+
+// 影集相关
+extern MDRecordLoggerKey const record_album_effect_mode;
+extern MDRecordLoggerKey const record_album_image_count;
+extern MDRecordLoggerKey const record_album_bg_music;
+extern MDRecordLoggerKey const record_album_set_cover;
+extern MDRecordLoggerKey const record_album_image_size;
+extern MDRecordLoggerKey const record_album_image_resolution;
+extern MDRecordLoggerKey const record_album_videoPreview_width;
+extern MDRecordLoggerKey const record_album_videoPreview_height;
+extern MDRecordLoggerKey const record_album_video_encode;
+extern MDRecordLoggerKey const record_album_video_extension;
+extern MDRecordLoggerKey const record_album_video_width;
+extern MDRecordLoggerKey const record_album_video_height;
+extern MDRecordLoggerKey const record_album_video_frameInterval;
+extern MDRecordLoggerKey const record_album_video_bitrate;
+extern MDRecordLoggerKey const record_album_video_gop_size;
+extern MDRecordLoggerKey const record_album_video_rotation;
+extern MDRecordLoggerKey const record_album_audio_encode;
+extern MDRecordLoggerKey const record_album_audio_bitrate;
+extern MDRecordLoggerKey const record_album_audio_sampleRate;
+extern MDRecordLoggerKey const record_album_audio_channels;
+extern MDRecordLoggerKey const record_album_file_video_duration;
+extern MDRecordLoggerKey const record_album_file_video_size;
+extern MDRecordLoggerKey const record_album_file_video_bitratio;
+extern MDRecordLoggerKey const record_album_file_video_frameratio;
+extern MDRecordLoggerKey const record_album_file_audio_samplerate;
+extern MDRecordLoggerKey const record_album_file_audio_channels;
+extern MDRecordLoggerKey const record_album_file_audio_bitrate;
+
+extern MDRecordLoggerKey const record_error_code;
+extern MDRecordLoggerKey const record_error_msg;
+
+#endif /* MDRecordLoggerKey_h */

@@ -30,13 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MDFace87DetectorContext : MDFaceDetectorContext
-
-+ (instancetype _Nullable)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDFaceDetectorContext * _Nullable))completed;
-
-@end
-
 @interface MDFace137DetectorContext: MDFaceDetectorContext
 
 + (instancetype _Nullable)makeDetector;

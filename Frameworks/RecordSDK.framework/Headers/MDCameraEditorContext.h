@@ -14,6 +14,7 @@
 
 @class MMFaceFeature;
 @protocol MLPixelBufferDisplay;
+@class MDCameraEditorContext;
 
 typedef struct {
     NSInteger faceTrackingIdentifier;
@@ -26,9 +27,22 @@ FOUNDATION_EXPORT BOOL RecorderFaceDeviation(CGRect oldFaceRect, CGRect newFaceR
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MDCameraEditorContextDelegate <NSObject>
+
+@optional
+
+- (BOOL)videoSampleBufferNeedHorizontalFlipWithRecordContext:(MDCameraEditorContext *)context;
+
+- (void)recordContext:(MDCameraEditorContext *)context
+    didOutputVideoSampleBuffer:(CMSampleBufferRef)videoSampleBuffer;
+- (void)recordContext:(MDCameraEditorContext *)context
+    didOutputAudioSampleBuffer:(CMSampleBufferRef)audioSampleBuffer;
+
+@end
+
 @interface MDCameraEditorContext : MDMediaEditorContext
 
-- (instancetype)initWithCameraPosition:(AVCaptureDevicePosition)position sessionPreset:(NSString *)preset;
+- (instancetype)initWithCameraPosition:(AVCaptureDevicePosition)position sessionPreset:(NSString *)preset frameRate:(NSUInteger)frameRate;
 
 @property (nonatomic, strong) id<MDProcessImageProtocol> filter;
 
@@ -36,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) UIView<MLPixelBufferDisplay> *previewView;
 
-@property (nonatomic, strong) AVAsset *backgroundAudio;
+@property (nonatomic, strong, nullable) AVAsset *backgroundAudio;
 @property (nonatomic, strong, readonly) id periodicTimeObserver;
 
 @property (nonatomic, assign) MDRecordCaptureFlashMode flashMode;
@@ -44,8 +58,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isRecording;
 
 @property (nonatomic, assign) NSTimeInterval recordDuration;
+@property (nonatomic, assign) NSTimeInterval minRecordDuration;
 
 @property (nonatomic, assign) UIDeviceOrientation outputOrientation;
+
+@property (nonatomic, weak) id<MDCameraEditorContextDelegate> delegate;
 
 
 // example:
@@ -76,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^completeProgressUpdateHandler)(double progress);
 
 @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
-@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image);
+@property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image, NSDictionary *metaInfo);
 
 @property (nonatomic, copy) MDVideoDetectorBlock faceFeatureHandler;
 
@@ -106,6 +123,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MDCameraEditorContext (MDRecord)
 
+@property (nonatomic, assign) BOOL saveOrigin;
+
 - (void)startRecording;
 - (void)stopVideoCaptureWithOutputURL:(NSURL *)URL
                     completionHandler:(void (^)(NSURL *videoFileURL, NSError *error))completionHandler;
@@ -119,6 +138,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resetRecorder;
 - (BOOL)canStartRecording;
 - (void)clearStashVideo;
+
+- (void)enableAudioRecording;
+- (void)disableAudioRecording;
 
 @property (nonatomic, readonly) NSTimeInterval currentRecordingDuration;
 @property (nonatomic, readonly) NSTimeInterval currentRecordingPresentDuration;
@@ -140,6 +162,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)rotateCamera;
 - (void)focusCameraInPoint:(CGPoint)pointInCamera;
+- (void)expposureInPoint:(CGPoint)pointInCamera;
 - (void)updateAutoFocusCameraFaceTracking:(MMFaceFeature * _Nullable)faceFeature;
 
 - (void)setVideoZoomFactor:(CGFloat)factor;

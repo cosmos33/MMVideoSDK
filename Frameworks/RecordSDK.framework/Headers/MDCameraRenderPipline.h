@@ -11,6 +11,7 @@
 #import "MDCameraRenderFilter.h"
 #import "MDCameraDetectorPipline.h"
 #import "MDProcessImageProtocol.h"
+#import "MDRGift.h"
 
 @class MDCameraEditorContext, FDKDecoration, FDKBeautySettings;
 
@@ -30,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateDecoration:(FDKDecoration *)decoration;
 - (void)removeDecoration;
+
+- (void)addGift:(MDRGift *)gift;
+- (void)removeGift:(NSString *)giftID;
+- (void)clearAllGifts;
 
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
 

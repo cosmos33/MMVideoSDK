@@ -31,15 +31,21 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setPitchShiftURL:(NSURL *)url;
 - (void)setTimeRangeMappingEffects:(NSArray<id<MLTimeRangeMappingEffect>> *)timeRangeMappingEffects;
 - (void)setMediaSourceRepeatRange:(CMTimeRange)timeRange;
+- (void)setVideoPerferredTransform:(CGAffineTransform)videoPerferredTransform;
 
-@property (nonatomic, strong) NSURL *backgroundAudioURL;
+// 默认为NO，当置为YES时候，调用 `loadVideo` 方法会自动调用 `compositeVideoWithError:`方法合成视频
+@property (nonatomic, assign) BOOL autoComposite;
+
+@property (nonatomic, strong, nullable) NSURL *backgroundAudioURL;
 @property (nonatomic, assign) CMTimeRange backgroundAudioRange;
 
 - (void)setSourceVolume:(float)volume;
 - (void)setBackgroundMusicVolume:(float)volume;
 
-- (BOOL)compositeVideoWithError:(NSError **)error;
+- (BOOL)compositeVideoWithError:(NSError * _Nullable * _Nullable)error;
 - (void)updateAudioMix;
+
+- (void)setVideoGravity:(AVLayerVideoGravity)videoGravity;
 
 // 播放器控制
 - (void)play;
@@ -114,7 +120,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) float targetBitRate;
 @property (nonatomic, assign) CGSize presentationSize;
-@property (nonatomic, assign) CGAffineTransform videoPerferredTransform;
+@property (nonatomic, assign) NSInteger targetFrameRate;
 
 - (void)enableFilterEffect:(BOOL)enable;
 

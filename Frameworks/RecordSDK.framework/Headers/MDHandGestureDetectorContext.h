@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MDHandGestureDetectorContext : NSObject <MDImageDetectorProtocol>
 
 + (instancetype _Nullable)makeDetector;
-+ (void)asyncAutoMakeDetector:(void(^)(MDHandGestureDetectorContext *_Nullable))completed;
++ (void)asyncAutoMakeDetector:(void(^)(MDHandGestureDetectorContext * _Nullable))completed;
 
 @property (nonatomic, readonly) MMHandFeature *result;
 

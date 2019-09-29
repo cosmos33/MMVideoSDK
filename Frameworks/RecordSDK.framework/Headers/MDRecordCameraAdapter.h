@@ -84,4 +84,7 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 - (void)enabelAudioRecording;
 - (void)disableAudioRecording;
 
+- (void)updateISO:(float)ISO;
+- (void)updateExposureTargetBias:(float)bias;
+
 @end

@@ -13,7 +13,6 @@
 #import "MDRecordCameraAdapter.h"
 #import "MDBBGPUImageSlidingFilter.h"
 #import "MDRGift.h"
-#import "MDGlobalDefine.h"
 
 @import CXBeautyKit;
 
@@ -216,6 +215,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param pointInCamera
  */
 - (void)expposureInPoint:(CGPoint)pointInCamera;
+
+- (void)updateExposureTargetBias:(float)bias;
 
 
 /**
@@ -569,17 +570,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setDetectBareness:(void (^)(void))detectBareness;
 
-
 /**
  待完善
  */
-@property (nonatomic, copy) void(^ _Nullable detectFace)(BOOL tracking);
-
-
-/**
- 待完善
- */
-@property (nonatomic, copy)  MDVideoDetectorBlock faceFeatureHandler;   //视频帧，脸部，身体数据回调
+@property (nonatomic, copy) void(^ _Nullable faceFeatureHandler)(CVPixelBufferRef _Nonnull pixelbuffer, NSArray<MMFaceFeature *> * _Nullable faceFeatures, NSArray<MMBodyFeature *> * _Nullable bodyFeatures); //视频帧，脸部，身体数据回调
 
 
 /**

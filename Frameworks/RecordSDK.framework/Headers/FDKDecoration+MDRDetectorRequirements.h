@@ -20,4 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface FDKDecoration (MDREnableEngineBeautySetting)
+
+@property (nonatomic, readonly) BOOL mdr_enableEngineBeautySetting;
+
+@end
+
 NS_ASSUME_NONNULL_END

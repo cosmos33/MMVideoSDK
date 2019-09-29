@@ -41,9 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resetState;
 
 - (void)activateBarenessDetectorEnable:(BOOL)enable;
-@property (nonatomic, copy) void(^ _Nullable detectFace)(BOOL tracking);
+@property (nonatomic, copy) void(^ _Nullable faceFeatureHandler)(CVPixelBufferRef _Nonnull pixelbuffer, NSArray<MMFaceFeature *> * _Nullable faceFeatures, NSArray<MMBodyFeature *> * _Nullable bodyFeatures);
 
-// 3D
+// engine
 -(void)runXESEngineWithPosition:(NSString *)decorationBastPath;
 - (void)rotateCamera:(AVCaptureDevicePosition)position;
 - (void)enableRecording:(BOOL)enable;

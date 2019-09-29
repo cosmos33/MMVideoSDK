@@ -8,12 +8,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 
-@class MDCameraDetectorPiplineResult;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MDProcessImageProtocol <NSObject>
-
-- (MDCameraDetectorPiplineResult *)previousDetectPixebuffer:(CVPixelBufferRef)pixelBuffer;
 
 - (void)processPixelBuffer:(CVPixelBufferRef)pixelBuffer
                     atTime:(CMTime)time

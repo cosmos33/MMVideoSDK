@@ -10,7 +10,6 @@
 #import "MDMediaEditorContext.h"
 #import "MDRecordCameraAdapter.h"
 #import "MDImageDetectorProtocol.h"
-#import "MDGlobalDefine.h"
 
 @class MMFaceFeature;
 @protocol MLPixelBufferDisplay;
@@ -22,8 +21,6 @@ typedef struct {
     CGRect    faceRect;
     BOOL manualFocus;
 } MDRecordAutoFocusCameraFaceTracking;
-
-FOUNDATION_EXPORT BOOL RecorderFaceDeviation(CGRect oldFaceRect, CGRect newFaceRect);
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -95,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^captureStillImageWillHandler)(void);
 @property (nonatomic, copy) void (^captureStillImageHandler)(UIImage *image, NSDictionary *metaInfo);
 
-@property (nonatomic, copy) MDVideoDetectorBlock faceFeatureHandler;
+- (void)updateExposureTargetBias:(float)bias;
 
 @end
 
@@ -163,7 +160,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rotateCamera;
 - (void)focusCameraInPoint:(CGPoint)pointInCamera;
 - (void)expposureInPoint:(CGPoint)pointInCamera;
-- (void)updateAutoFocusCameraFaceTracking:(MMFaceFeature * _Nullable)faceFeature;
+- (void)updateAutoFocusCameraFaceTracking:(MDRecordAutoFocusCameraFaceTracking)face;
 
 - (void)setVideoZoomFactor:(CGFloat)factor;
 - (CGFloat)videoZoomFactor;

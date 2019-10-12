@@ -54,6 +54,7 @@
 #import "SplitPersonFilter.h"
 #import "SplitPersonVerticalFilter.h"
 #import "WaterReflectionFilter.h"
+#import "MDRMHorizontalFlipFilter.h"
 #import "MDError.h"
 #import "MDGlobalDefine.h"
 #import "MDMediaEditorContext.h"

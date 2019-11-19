@@ -53,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 移除decoration
 - (void)removeAllDecoration;
 
+@property (atomic, assign) AVCaptureDevicePosition captureDevicePosition;
+
 // 重置状态
 - (void)resetImageSegment;
 - (void)resetExpressionDetector;

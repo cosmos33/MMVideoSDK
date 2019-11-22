@@ -24,10 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFDKDecorationFilterOptions:(FDKDecorationFilterOptions *)options
                                  slidingFilterMode:(MDRGPUImageSlidingFilterMode)mode NS_DESIGNATED_INITIALIZER;
 
+@property (nonatomic, assign) MDRGPUImageSlidingFilterMode mode;
+
 @property (nonatomic, strong) FDKDecoration *decoration;
 @property (nonatomic, assign) float audioVolume;
 
-- (void)udpateBeautySetting:(FDKBeautySettings *)beautySettings;
+- (void)updateBeautySetting:(FDKBeautySettings *)beautySettings;
 - (void)configDecorationFilterAttachment:(MDGPUImageMediaFiltersAttachment *)filtersAttachment;
 
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterA;

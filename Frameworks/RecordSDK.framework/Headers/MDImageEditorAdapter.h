@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL canUseBodyThinSetting;
 
+// 设置以后会启用背景模糊效果
+@property (nonatomic, assign) CGSize outputImageSize;
+
 // 初始化
 - (void)loadImage:(UIImage *)image completionHander:(void(^)(CVPixelBufferRef _Nullable, NSError * _Nullable))completion;
 
@@ -43,10 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setBeautyThinBodyValue:(float)value;
 - (void)setBeautyLenghLegValue:(float)value;
 - (void)removeDecoration;
-
-// 添加自定义滤镜
-- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
-- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
 
 @end
 

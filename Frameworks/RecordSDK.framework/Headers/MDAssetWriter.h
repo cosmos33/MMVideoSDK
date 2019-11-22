@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
+- (instancetype)initWithURL:(NSURL *)URL fileType:(AVFileType)fileType liveVideo:(BOOL)liveVideo;
 - (instancetype)initWithURL:(NSURL *)URL size:(CGSize)size fileType:(AVFileType)fileType liveVideo:(BOOL)liveVideo;
 
 - (BOOL)startRecording;

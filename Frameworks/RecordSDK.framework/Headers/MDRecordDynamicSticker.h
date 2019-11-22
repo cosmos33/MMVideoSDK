@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
+#import "MDRStickerProtocol.h"
 
 @class FDKDecorationFilterOptions, FDKDecorationFilter;
 @protocol FDKObjectFeature;
@@ -33,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 //动态帖子
-@interface MDRecordDynamicSticker : MDRecordBaseSticker <NSCopying, FDKObjectFeature>
+@interface MDRecordDynamicSticker : MDRecordBaseSticker <MDRStickerProtocol, NSCopying>
 
 @property (nonatomic, assign) CGRect bounds;
 @property (nonatomic, assign) CGFloat roll;

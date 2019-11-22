@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, MDRGPUImageSlidingFilterMode) {
 - (instancetype)init;
 - (instancetype)initWithMode:(MDRGPUImageSlidingFilterMode)mode NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, readonly) MDRGPUImageSlidingFilterMode mode;
+@property (nonatomic, assign) MDRGPUImageSlidingFilterMode mode;
 
 @property (nonatomic) double offset; //-1...0...1
 

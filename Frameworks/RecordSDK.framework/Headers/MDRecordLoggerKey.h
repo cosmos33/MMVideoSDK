@@ -179,4 +179,6 @@ extern MDRecordLoggerKey const record_album_file_audio_bitrate;
 extern MDRecordLoggerKey const record_error_code;
 extern MDRecordLoggerKey const record_error_msg;
 
+extern MDRecordLoggerKey const record_on_load;
+
 #endif /* MDRecordLoggerKey_h */

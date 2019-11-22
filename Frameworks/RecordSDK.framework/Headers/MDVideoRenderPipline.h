@@ -20,24 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) MDVideoRenderFilter *renderFilter;
 @property (nonatomic, readonly) MDVideoDetectorPipline *detector;
 
+@property (nonatomic, assign) CGSize outputImageSize;
+
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 
 - (void)updateDecoration:(FDKDecoration * _Nullable)decoration;
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
-
-// makeup
-- (void)enableMakeup:(BOOL)enable;
-- (void)addMakeupLayerConfiguration:(CXMakeupLayerConfiguration *)layerConfiguration;
-- (void)removeMakeupLayerConfigurationWithLayerIdentifier:(NSString *)layerIdentifier;
-
-// background blur
-- (void)enableBackgroundBlur:(BOOL)enable;
-- (void)backgroundBlurIntensity:(float)intensity;
-- (void)backgroundBlurMode:(CXBackgroundBlurMode)mode;
-
-// add custom filter
-- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
-- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
 
 @end
 

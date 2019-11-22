@@ -12,10 +12,9 @@
 #import "MDRSpecialFilterLifeStyleProtocol.h"
 #import "MDCancellable.h"
 #import "MDRecordDynamicSticker.h"
-@import CXBeautyKit;
 
 @class FDKDecoration, CXBeautyConfiguration, GPUImageOutput;
-@protocol MLTimeRangeMappingEffect, GPUImageInput;
+@protocol MLTimeRangeMappingEffect, GPUImageInput, MDRStickerProtocol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -102,15 +101,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<GPUImageOutput<GPUImageInput, MDRSpecialFilterLifeStyleProtocol> *> *)specialFilters;
 - (BOOL)hasSpecialFilter;
 
-- (void)addDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
-- (void)removeDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
+- (void)addDynamicSticker:(id<MDRStickerProtocol>)dynamicSticker;
+- (void)removeDynamicSticker:(id<MDRStickerProtocol>)dynamicSticker;
 
 - (void)updateDecoration:(FDKDecoration *)decoration;
 - (void)removeDecoration;
 
-// add custom filter
-- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
-- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+@property (nonatomic, assign) CGSize videoDisplaySize;;
 
 @end
 
@@ -128,66 +125,6 @@ NS_ASSUME_NONNULL_BEGIN
                  progressHandler:(void(^ _Nullable)(double progress))progressHandler
                       completion:(void(^ _Nullable)(NSURL *url))completion
                          failure:(void(^ _Nullable)(NSError * _Nullable error))failure;
-
-@end
-
-@interface MDVideoEditorAdapter (MDRMakeUp)
-
-/**
- 启用美妆功能
- 
- @param enable YES启用，NO禁用
- */
-- (void)enableMakeup:(BOOL)enable;
-
-/**
- 增加美妆效果
- 
- @param resouceURL 资源文件路径
- @return 该效果identifier
- */
-- (NSString *)addMakeUpEffectWithResourceURL:(NSURL *)resouceURL;
-
-/**
- 根据identifier移除美妆效果
- 
- @param identifiter 要移除的美妆效果的identifier
- */
-- (void)removeMakeUpEffectWithIdentifier:(NSString *)identifiter;
-
-/**
- 移除所有的美妆效果
- */
-- (void)removeAllMakeUpEffect;
-
-/**
- 调整美妆效果程度
- 
- @param intensity 程度(0-1)
- @param identifier 美妆效果
- */
-- (void)setIntensity:(CGFloat)intensity forIdentifiler:(NSString *)identifier;
-
-@end
-
-@interface MDVideoEditorAdapter (MDRBackgroundBlur)
-
-/**
- 是否启用背景模糊
- 
- @param enable YES启用，NO禁用
- */
-- (void)enableBackgroundBlur:(BOOL)enable;
-
-/**
- 设置背景模糊效果
- 
- @param mode 背景模糊样式
- */
-- (void)setBackgroundBlurMode:(CXBackgroundBlurMode)mode;
-
-// 背景模糊程度(0-1)
-- (void)setBackgroundBlurIntensity:(CGFloat)intensity;
 
 @end
 

@@ -1,20 +1,24 @@
 //
-//  MDPlayerViewController.h
-//  RecordSDK
+//  MDRecordPlayerViewController.h
+//  MMVideoSDK
 //
-//  Created by sunfei on 2018/11/30.
-//  Copyright © 2018 sunfei. All rights reserved.
+//  Created by sunfei on 2019/10/12.
 //
 
-#import <Foundation/Foundation.h>
-@import MLMediaFoundation;
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MDProcessImageProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MDRecordPlayerViewController : MLPlayerViewController <MLPlayerViewControllerDelegate>
+@interface MDRecordPlayerViewController : UIViewController
 
-//- (void)play;
-//- (void)pause;
+@property (nonatomic, readonly) AVPlayer *player;
+@property (nonatomic, strong, nullable) id<MDProcessImageProtocol> filter;
+@property (nonatomic, copy) AVLayerVideoGravity videoGravity;
+@property (nonatomic, assign) NSInteger preferredFramesPerSecond;
+
+@property (nonatomic,strong,nullable) NSOperationQueue *renderQueue;
 
 - (CGRect)videoRenderFrame;
 

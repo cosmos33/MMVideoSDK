@@ -14,12 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface FDKDecoration (MDRFaceDetectorAlignment)
-
-@property (nonatomic, readonly) NSUInteger faceAlignmentVersion;
-
-@end
-
 @interface FDKDecoration (MDREnableEngineBeautySetting)
 
 @property (nonatomic, readonly) BOOL mdr_enableEngineBeautySetting;

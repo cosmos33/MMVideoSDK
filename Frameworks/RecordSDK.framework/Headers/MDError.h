@@ -85,10 +85,12 @@ typedef NS_ERROR_ENUM(MDRRecordingErrorDomain, MDRRecordingError) {
     MDRRecordingErrorLoadSegmentDetector,
     MDRRecordingErrorLoadBodylandDetector,
     MDRRecordingErrorLoadBarnessDetector,
+    MDRRecordingErrorLoadFacerigDetector,
     MDRRecordingErrorLoadDataRecyleDetector,
     MDRRecordingErrorEncoderInit,
     MDRRecordingErrorGetAudioStatus,
     MDRRecordingErrorResetCamera,
+    MDRRecordingErrorExporting,
     
     MDRRecordingErrorAudioRecordOpen = 102001,
     MDRRecordingErrorAudioStartEncode,

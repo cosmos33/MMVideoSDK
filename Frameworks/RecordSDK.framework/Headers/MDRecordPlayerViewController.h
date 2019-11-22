@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <MDProcessImageProtocol.h>
+#import "MDProcessImageProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

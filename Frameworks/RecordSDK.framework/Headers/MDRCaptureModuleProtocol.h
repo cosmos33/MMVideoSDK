@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 #import "MDRCommonDefine.h"
-#import "MLPixelBufferDisplay.h"
+@import MLMediaFoundation;
 
 @class MDRCapturePreviewConfig;
 @class MDRCaptureDeviceCapability;

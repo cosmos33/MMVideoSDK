@@ -9,18 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
-
-typedef NS_ENUM(NSUInteger,MDRecordCameraSourceType)
-{
-    MDRecordCameraSourceType_captureSession,
-    MDRecordCameraSourceType_ARKIT
-};
-
-typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
-    MDRecordCaptureFlashModeOff   = 0,
-    MDRecordCaptureFlashModeOn    = 1,
-    MDRecordCaptureFlashModeAuto  = 2,
-};
+#import "MDRCommonDefine.h"
 
 @class MDRecordCameraAdapter;
 
@@ -86,5 +75,8 @@ typedef NS_ENUM(NSUInteger, MDRecordCaptureFlashMode) {
 
 - (void)updateISO:(float)ISO;
 - (void)updateExposureTargetBias:(float)bias;
+
+- (void)autoConfigAudioSessionDisable:(BOOL)disable;
+- (BOOL)changeSessionPreset:(AVCaptureSessionPreset)sessionPreset;
 
 @end

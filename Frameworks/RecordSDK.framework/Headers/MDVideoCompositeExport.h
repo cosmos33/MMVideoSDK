@@ -8,10 +8,11 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "MDVideoExportProtocol.h"
+#import "MDCancellable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MDVideoCompositeExport : NSObject <MDVideoExportProtocol>
+@interface MDVideoCompositeExport : NSObject <MDVideoExportProtocol,MDCancellable>
 
 - (instancetype)init;
 - (instancetype)initWithAssets:(NSArray<AVAsset *> * _Nullable)assets NS_DESIGNATED_INITIALIZER;

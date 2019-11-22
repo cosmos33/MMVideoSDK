@@ -30,8 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateBeautySetting:(FDKBeautySettings *)beautySetting;
 
-- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
-- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+@property (nonatomic, assign) CGSize outputImageSize;
 
 @end
 

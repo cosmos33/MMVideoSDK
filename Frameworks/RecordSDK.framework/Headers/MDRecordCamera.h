@@ -28,6 +28,8 @@
 
 - (void)rotateCamera;
 
+- (BOOL)changeSessionPreset:(AVCaptureSessionPreset)sessionPreset;
+
 //camera的一些清理工作
 - (void)cleanCamera;
 
@@ -39,11 +41,15 @@
 @property (nonatomic, assign) float cameraZoomFactor;
 
 @property (nonatomic, readonly) BOOL hasVideoInput;
+@property (nonatomic,strong, readonly) AVCaptureVideoDataOutput *videoDataOutput;
+@property (nonatomic,strong, readonly) AVCaptureAudioDataOutput *audioDataOutput;
 
 @property (nonatomic, readonly) BOOL hasTorch;
 @property (nonatomic, readonly) BOOL hasFlash;
 @property (nonatomic, assign) AVCaptureTorchMode torchMode;
 @property (nonatomic, assign) AVCaptureFlashMode flashMode;
+
+@property (nonatomic,assign) BOOL disableAutoConfigAudioSession;
 
 - (BOOL)supportCpatureTorchMode:(AVCaptureTorchMode)mode;
 - (BOOL)supportCaptureFlashMode:(AVCaptureFlashMode)mode;

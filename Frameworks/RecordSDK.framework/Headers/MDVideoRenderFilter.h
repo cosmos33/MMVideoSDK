@@ -12,10 +12,9 @@
 #import "MDRecordPiplineSpecificFilterGroup.h"
 #import "MDBBGPUImageSlidingFilter.h"
 #import "MDRecordFilter.h"
-@import CXBeautyKit;
 
 @class FDKDecoration, FDKBeautySettings, CXBeautyConfiguration;
-@protocol FDKDecorationFilterUpdating;
+@protocol FDKDecorationFilterUpdating, MDRStickerProtocol;
 
 @class MDRecordDynamicSticker;
 
@@ -44,8 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setGraffitiCanvasImage:(UIImage * _Nullable)graffitiCanvasImage mosaicCanvasImage:(UIImage * _Nullable)mosaicCanvasImage;
 
 // 动态贴纸
-- (void)addDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
-- (void)removeDynamicSticker:(MDRecordDynamicSticker *)dynamicSticker;
+- (void)addDynamicSticker:(id<MDRStickerProtocol>)dynamicSticker;
+- (void)removeDynamicSticker:(id<MDRStickerProtocol>)dynamicSticker;
 
 // 普通滤镜
 @property (nonatomic, copy) MDRecordFilter *slidingMDFilterA;
@@ -56,22 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL canUseAIBeautySetting;
 @property (nonatomic, strong) CXBeautyConfiguration *beautyConfiguration;
 
-// makeup
-- (void)enableMakeup:(BOOL)enable;
-- (void)addMakeupLayerConfiguration:(CXMakeupLayerConfiguration *)layerConfiguration;
-- (void)removeMakeupLayerConfigurationWithLayerIdentifier:(NSString *)layerIdentifier;
-
-// background blur
-- (void)enableBackgroundBlur:(BOOL)enable;
-- (void)backgroundBlurIntensity:(float)intensity;
-- (void)backgroundBlurMode:(CXBackgroundBlurMode)mode;
-
 // 变声
 //- (void)prepareAudioBeatWithURL:(NSURL *)url audioBeatType:(MDRecordAudioBeatType)type;
 
-// add custom filter
-- (void)addCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
-- (void)removeCustomFilter:(GPUImageOutput<GPUImageInput> *)filter;
+// 启用背景模糊
+@property (nonatomic, assign) CGSize outputImageSize;
 
 @end
 

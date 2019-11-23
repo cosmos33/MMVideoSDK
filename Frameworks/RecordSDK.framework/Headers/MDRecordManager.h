@@ -7,12 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MDRIRecordLogger, MDLoggerService;
+@protocol MDRIRecordLogger;
 
 extern NSString * const _Nonnull __kMMVideoSDKTag__;
 
 #ifdef DEBUG
-#define MDRLog(fmt, ...) autoreleasepool {} __MDLogDebugTag(__kMMVideoSDKTag__, fmt, ##__VA_ARGS__)
+#define MDRLog(fmt, ...) autoreleasepool {} 
 #else
 #define MDRLog(fmt, ...) try {} @catch (...) {} 
 #endif

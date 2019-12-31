@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreVideo/CoreVideo.h>
-#import "MLPixelBufferDisplay.h"
+@import MLMediaFoundation;
 
 NS_ASSUME_NONNULL_BEGIN
 

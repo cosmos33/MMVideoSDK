@@ -13,7 +13,7 @@
 #import "MDRAnalytics.h"
 #import "MDRecordManager.h"
 #import "MDError.h"
-#import "MDLog/MDlog.h"
+//#import "MDLog/MDlog.h"
 #import "MDRCameraException.h"
 
 FOUNDATION_EXPORT void MDRDispatchAsynchronouslyOnMainQueue(void (^action)(void));

@@ -41,6 +41,10 @@ didOutputASegmentFilePath:(NSURL *)filePath
 
 - (void)cancelRecording;
 
+//TODO:临时这么处理，后期需要优化 （@符吉胜）
+- (void)setLastVideoPresentTime:(CMTime)time;
+- (void)setLastAudioPresentTime:(CMTime)time;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)appToken;
 
++ (void)setUserId:(NSString *)userId;
++ (NSString *)userId;
+
 + (void)configLogger:(id<MDRIRecordLogger>)logger;
 + (id<MDRIRecordLogger>)logger;
 

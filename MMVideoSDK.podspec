@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMVideoSDK'
-  s.version          = '1.0.3'
+  s.version          = '2.3.5'
   s.summary          = 'MMVideoSDK'
 
   s.description      = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://www.baidu.com/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'bi.s_fish' => 'sunfeifish@gmail.com' }
-  s.source           = { :git => 'https://github.com/cosmos33/MMVideoSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/cosmos33/MMVideoSDK.git', :tag => '2.3.4' }
 
   s.ios.deployment_target = '9.0'
 
@@ -27,11 +27,12 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/**/*.framework'
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => '$(inherited) NO', 'OTHER_LDFLAGS' => '$(inherited) -ObjC'}
 
-  s.dependency 'MMMedia', '1.0.0'
-  s.dependency 'MMCV', '1.0.0'
-  s.dependency 'MMXEScene', '1.0.0'
+  s.dependency 'MMMedia'
+  s.dependency 'MMCV', '~> 1.1.2'
+  s.dependency 'MMXEngine'
   s.dependency 'GPUImage'
-  s.dependency 'MetalPetal', '1.1.2'
-  s.dependency 'ZipArchive'
+  s.dependency 'MetalPetal/Static'
+  s.dependency 'MMFileService', '~>1.3.0'
+  s.dependency 'MDLog', '~> 1.2.4'
   
 end
